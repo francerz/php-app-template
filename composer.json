@@ -1,0 +1,19 @@
+{
+    "name": "vendor/app",
+    "type": "project",
+    "suggest": {
+        "francerz/exfpdf": "A FPDF extended version that brings power an flexibility"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vendor\\App\\": "src/"
+        }
+    },
+    "require": {
+        "francerz/http": "^0.3",
+        "francerz/mysql-builder": "^0.1",
+        "slim/slim": "^4.9",
+        "slim/psr7": "^1.5",
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
