@@ -1,3 +1,14 @@
+# Ignoring IDE files
 /.vscode/
-/vendor/
+
+# Ignoring environment file
 /.env
+
+# Ignoring dependencies
+/node_modules/
+/vendor/
+
+# Ignoring everything in /public, but index.php and assets
+/public/**/*
+!/public/assets/**/*
+!/public/index.php
