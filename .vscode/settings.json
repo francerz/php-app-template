@@ -1,0 +1,14 @@
+{
+    "editor.rulers": [80, 120],
+    "extensions.ignoreRecommendations": false,
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "files.eol": "\n",
+        "files.insertFinalNewline": true
+    },
+    "phpcs.enable": true,
+    "phpcs.lintOnlyOpened": false,
+    "phpcs.standard": "PSR12",
+    "phpcsfixer.onsave": true,
+    "phpcsfixer.rules": "@PSR12",
+}

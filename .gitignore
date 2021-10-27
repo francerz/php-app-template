@@ -1,5 +1,5 @@
 # Ignoring IDE files
-/.vscode/
+/.vscode/launch.json
 
 # Ignoring environment file
 /.env
