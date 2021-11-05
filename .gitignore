@@ -12,3 +12,6 @@
 /public/**/*
 !/public/assets/**/*
 !/public/index.php
+
+# Ignoring any cache file
+*.cache

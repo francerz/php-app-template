@@ -7,3 +7,11 @@ root = true
 [*]
 end_of_line = lf
 insert_final_newline = true
+
+# Set default charset
+[*]
+charset = utf-8
+
+# Tab indentation
+indent_style = space
+indent_size = 4
