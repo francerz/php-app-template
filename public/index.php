@@ -1,8 +1,8 @@
 <?php
 
+use App\Application;
 use Dotenv\Dotenv;
 use Francerz\Http\Utils\HttpHelper;
-use Vendor\App\Application;
 
 (function () {
     $displayErrors = ini_get('display_errors');
@@ -10,13 +10,13 @@ use Vendor\App\Application;
 
     $autoloadPath = dirname(__FILE__, 2) . '/vendor/autoload.php';
     if (!file_exists($autoloadPath)) {
-        trigger_error("Missing file 'vendor/autoload.php'. Please execute 'composer install'.", E_USER_ERROR);
+        trigger_error("Missing 'vendor/autoload.php'. Please execute 'composer install'.", E_USER_ERROR);
     }
     require_once $autoloadPath;
 
     $envPath = dirname(__FILE__, 2) . '/.env';
     if (!file_exists($envPath)) {
-        trigger_error("Missing file '.env'. Please copy '.env.dist' as '.env'.", E_USER_ERROR);
+        trigger_error("Missing '.env' file. Please copy '.env.dist' as '.env'.", E_USER_ERROR);
     }
     $dotenv = Dotenv::createImmutable(dirname($envPath), basename($envPath));
     $dotenv->load();

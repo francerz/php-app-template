@@ -29,8 +29,13 @@ Directory structure
 ---------------------------------------
 
 ### public
-### src
+Web Server accesible file.
+
+### app
+Web Application source code.
+
 ### res
+Web Application resources.
 
 Security Notes
 ---------------------------------------

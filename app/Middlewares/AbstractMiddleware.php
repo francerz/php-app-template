@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\App\Middlewares;
+namespace App\Middlewares;
 
 use Psr\Http\Server\MiddlewareInterface;
 

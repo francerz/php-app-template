@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\App\Models;
+namespace App\Models;
 
 use Francerz\SqlBuilder\DatabaseManager;
 use Francerz\SqlBuilder\Query;

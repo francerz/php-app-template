@@ -1,13 +1,13 @@
 <?php
 
-namespace Vendor\App;
+namespace App;
 
+use App\Controllers\HomeController;
+use App\Middlewares\MetricsMiddleware;
 use Francerz\Http\HttpFactory;
 use Francerz\Http\Utils\UriHelper;
 use Slim\Factory\AppFactory;
 use Slim\App as SlimApp;
-use Vendor\App\Controllers\HomeController;
-use Vendor\App\Middlewares\MetricsMiddleware;
 
 class Application
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\App\Controllers;
+namespace App\Controllers;
 
 abstract class AbstractController
 {
