@@ -7,14 +7,9 @@ use Francerz\SqlBuilder\Query;
 
 class Usuario extends AbstractModel
 {
-    /**
-     * @var int
-     */
+    /** @var int */
     public $id_usuario;
-
-    /**
-     * @var string
-     */
+    /** @var string */
     public $usuario;
 
     public static function getQuery(array $params = [])
@@ -43,13 +38,13 @@ class Usuario extends AbstractModel
     public static function getFirst(array $params = [])
     {
         $rows = static::getRows($params);
-        return reset($rows);
+        return reset($rows) ?: null;
     }
 
     public static function getLast(array $params = [])
     {
         $rows = static::getRows($params);
-        return end($rows);
+        return end($rows) ?: null;
     }
 
     public static function insert(Usuario $usuario)
@@ -61,8 +56,20 @@ class Usuario extends AbstractModel
         return $result;
     }
 
-    public static function update(Usuario $usuario)
+    public static function update(Usuario $usuario, $matching = null, $columns = null)
+    {
+        $matching = $matching ?? ['id_usuario'];
+        $columns = $columns ?? [];
+
+        $db = DatabaseManager::connect('myapp');
+        $query = Query::update('usuarios', $usuario, $matching, $columns);
+        $result = $db->executeUpdate($query);
+        return $result;
+    }
+
+    public static function delete(Usuario $usuario)
     {
         $db = DatabaseManager::connect('myapp');
+        $query = Query::deleteFrom('usuarios', $usuario);
     }
 }
