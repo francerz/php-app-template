@@ -11,9 +11,7 @@ use Slim\App as SlimApp;
 
 class Application
 {
-    /**
-     * @var SlimApp
-     */
+    /** @var SlimApp */
     private $slimApp;
 
     public function start()
@@ -31,8 +29,8 @@ class Application
 
     public function route()
     {
-        $app = $this->slimApp;
-        $app->add(MetricsMiddleware::class);
-        $app->get('[/]', [HomeController::class, 'indexGet']);
+        $route = $this->slimApp;
+        $route->add(MetricsMiddleware::class);
+        $route->get('[/]', [HomeController::class, 'indexGet']);
     }
 }

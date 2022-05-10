@@ -21,6 +21,13 @@ use Francerz\Http\Utils\HttpHelper;
     $dotenv = Dotenv::createImmutable(dirname($envPath), basename($envPath));
     $dotenv->load();
 
+    if (isset($_ENV['DEFAULT_TIMEZONE'])) {
+        date_default_timezone_set($_ENV['DEFAULT_TIMEZONE']);
+    }
+    if (isset($_ENV['SESSION_NAME'])) {
+        session_name($_ENV['SESSION_NAME']);
+    }
+
     ini_set('display_errors', $displayErrors);
 })();
 

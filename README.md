@@ -29,13 +29,13 @@ Directory structure
 ---------------------------------------
 
 ### public
-Web Server accesible file.
+Web Server accesible files.
 
 ### app
 Web Application source code.
 
 ### res
-Web Application resources.
+Web Application resources, like views.
 
 Security Notes
 ---------------------------------------

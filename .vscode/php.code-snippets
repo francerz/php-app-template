@@ -1,0 +1,197 @@
+{
+	"Model": {
+        "scope": "php",
+		"prefix": "model",
+		"description": "Creates a model compatible with francerz/sql-builder",
+		"body": [
+			"",
+			"namespace App\\Models;",
+			"",
+			"use Francerz\\SqlBuilder\\DatabaseManager;",
+			"use Francerz\\SqlBuilder\\Query;",
+			"",
+			"class $TM_FILENAME_BASE extends AbstractModel",
+			"{",
+            "    /** @sql-pk */",
+            "    public \\$$1;",
+            "",
+			"    public static function getQuery(array \\$params = [])",
+			"    {",
+			"        \\$query = Query::selectFrom([$2 => $3]);",
+            "",
+            "        // DO NOT REMOVE, checks if passed params are not used in code block.",
+            "        static::crashUnusedParams(\\$params);",
+			"        return \\$query;",
+			"    }",
+			"",
+			"    /**",
+			"     *  @return $TM_FILENAME_BASE[]",
+			"     */",
+			"    public static function getRows(array \\$params = [])",
+			"    {",
+			"        \\$db = DatabaseManager::connect($4);",
+			"        \\$query = static::getQuery(\\$params);",
+			"        \\$result = \\$db->executeSelect(\\$query);",
+			"        return \\$result->toArray($TM_FILENAME_BASE::class);",
+			"    }",
+			"",
+			"    public static function getFirst(array \\$params = [])",
+			"    {",
+			"        \\$rows = static::getRows(\\$params);",
+			"        return reset(\\$rows) ?: null;",
+			"    }",
+			"",
+			"    public static function getLast(array \\$params = [])",
+			"    {",
+			"        \\$rows = static::getRows(\\$params);",
+			"        return end(\\$rows) ?: null;",
+			"    }",
+            "",
+            "    public static function insert($TM_FILENAME_BASE \\$data, \\$columns = null)",
+            "    {",
+            "        \\$db = DatabaseManager::connect($4);",
+            "        \\$query = Query::insertInto($3, \\$data, \\$columns);",
+            "        \\$result = \\$db->executeInsert(\\$query);",
+            "        \\$data->$1 = \\$result->getInsertedId();",
+            "        return \\$result;",
+            "    }",
+            "",
+            "    public static function update($TM_FILENAME_BASE \\$data, \\$columns = null, \\$matching = null)",
+            "    {",
+            "        \\$db = DatabaseManager::connect($4);",
+            "        \\$query = Query::update($3, \\$data, \\$columns, \\$matching);",
+            "        \\$result = \\$db->executeUpdate(\\$query);",
+            "        return \\$result;",
+            "    }",
+			"}",
+			""
+		]
+	},
+    "Model Insert": {
+        "scope": "php",
+        "prefix": "model insert",
+        "body": [
+            "public static function insert($TM_FILENAME_BASE \\$data, \\$columns = null)",
+            "{",
+            "    \\$db = DatabaseManager::connect($1);",
+            "    \\$query = Query::insertInto($2, \\$data, \\$columns);",
+            "    \\$result = \\$db->executeInsert(\\$query);",
+            "    \\$data->$3 = \\$result->getInsertedId();",
+            "    return \\$result;",
+            "}",
+        ]
+    },
+    "Model Update": {
+        "scope": "php",
+        "prefix": "model update",
+        "body": [
+            "public static function update($TM_FILENAME_BASE \\$data, \\$columns = null, \\$matching = null)",
+            "{",
+            "    \\$db = DatabaseManager::connect($1);",
+            "    \\$query = Query::update($2, \\$data, \\$columns, \\$matching);",
+            "    \\$result = \\$db->executeUpdate(\\$query);",
+            "    return \\$result;",
+            "}",
+        ]
+    },
+    "Model Query Parameter": {
+        "scope": "php",
+        "prefix": "model param",
+        "body": [
+            "if (array_key_exists($1, \\$params)) {",
+            "    $2",
+            "}"
+        ]
+    },
+    "Controller": {
+        "scope": "php",
+        "prefix": "controller",
+        "body": [
+            "",
+            "namespace App\\Controllers;",
+            "",
+            "use Psr\\Http\\Message\\ResponseInterface as IResponse;",
+            "use Psr\\Http\\Message\\ServerRequestInterface as IServerRequest;",
+            "",
+            "class $TM_FILENAME_BASE extends AbstractController",
+            "{",
+            "    public function indexGet(IServerRequest \\$request, IResponse \\$response, array \\$params): IResponse",
+            "    {",
+            "        return \\$response;",
+            "    }",
+            "}",
+            ""
+        ]
+    },
+    "Controller Method":{
+        "scope": "php",
+        "prefix": "controller method",
+        "body": [
+            "public function $1(IServerRequest \\$request, IResponse \\$response, array \\$params): IResponse",
+            "{",
+            "    $2",
+            "    return \\$response;",
+            "}",
+        ]
+    },
+    "Middleware": {
+        "scope": "php",
+        "prefix": "middleware",
+        "body": [
+            "",
+            "namespace App\\Middlewares;",
+            "",
+            "use Psr\\Http\\Message\\ResponseInterface as IResponse;",
+            "use Psr\\Http\\Message\\ServerRequestInterface as IServerRequest;",
+            "use Psr\\Http\\Server\\RequestHandlerInterface as IRequestHandler;",
+            "",
+            "class $TM_FILENAME_BASE extends AbstractMiddleware",
+            "{",
+            "    public function process(IServerRequest \\$request, IRequestHandler \\$handler): IResponse",
+            "    {",
+            "        return \\$handler->handle(\\$request);",
+            "    }",
+            "}",
+            ""
+        ]
+    },
+    "Route Group": {
+        "scope": "php",
+        "prefix": "route group",
+        "body": [
+            "\\$route->group($1, function (RouteCollectorProxy \\$route) {",
+            "    $2",
+            "});"
+        ]
+    },
+    "Route Get": {
+        "scope": "php",
+        "prefix": "route get",
+        "body": [
+            "\\$route->get($1, [$2, $3]);"
+        ]
+    },
+    "Route Post": {
+        "scope": "php",
+        "prefix": "route post",
+        "body": [
+            "\\$route->post($1, [$2, $3]);"
+        ]
+    },
+    "View" : {
+        "scope": "php",
+        "prefix": "view",
+        "body": [
+            "",
+            "use Francerz\\Render\\HTML;",
+            "",
+            "HTML::layout('@layouts/default');",
+            "HTML::startSection('content');",
+            "?>",
+            "$1",
+            "<?php",
+            "HTML::endSection();",
+            "HTML::render();"
+        ]
+    }
+}

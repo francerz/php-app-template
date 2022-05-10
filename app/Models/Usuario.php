@@ -16,10 +16,12 @@ class Usuario extends AbstractModel
     {
         $query = Query::selectFrom(['u' => 'usuarios']);
 
-        if (array_key_exists('id_usuario', $params)) {
+        if (static::hasParam($params, 'id_usuario')) {
             $query->where('u.id_usuario', $params['id_usuario']);
         }
 
+        // DO NOT REMOVE, checks if passed params are not used in code block.
+        static::crashUnusedParams($params);
         return $query;
     }
 
