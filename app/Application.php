@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Controllers\HomeController;
+use App\Middlewares\DebugMiddleware;
 use App\Middlewares\MetricsMiddleware;
 use Francerz\Http\HttpFactory;
 use Francerz\Http\Utils\UriHelper;
@@ -30,7 +31,8 @@ class Application
     public function route()
     {
         $route = $this->slimApp;
-        $route->add(MetricsMiddleware::class);
+        $route->addMiddleware(new MetricsMiddleware());
+        $route->addMiddleware(new DebugMiddleware());
         $route->get('[/]', [HomeController::class, 'indexGet']);
     }
 }

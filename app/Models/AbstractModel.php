@@ -41,7 +41,9 @@ abstract class AbstractModel
     {
         $unusedParams = static::getUnusedParams($params);
         if (count($unusedParams) > 0) {
-            throw new LogicException('Unused params: ' . join(', ', $unusedParams));
+            throw new LogicException(
+                'Unused params: ' . join(', ', $unusedParams) . ' on ' . static::class
+            );
         }
     }
 }
