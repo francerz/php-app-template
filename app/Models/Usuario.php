@@ -14,14 +14,16 @@ class Usuario extends AbstractModel
 
     public static function getQuery(array $params = [])
     {
+        $params = new ModelParams($params, static::class);
+
         $query = Query::selectFrom(['u' => 'usuarios']);
 
-        if (static::hasParam($params, 'id_usuario')) {
+        if (isset($params['id_usuario'])) {
             $query->where('u.id_usuario', $params['id_usuario']);
         }
 
         // DO NOT REMOVE, checks if passed params are not used in code block.
-        static::crashUnusedParams($params);
+        $params->check();
         return $query;
     }
 

@@ -12,15 +12,16 @@
 			"",
 			"class $TM_FILENAME_BASE extends AbstractModel",
 			"{",
-            "    /** @sql-pk */",
             "    public \\$$1;",
             "",
 			"    public static function getQuery(array \\$params = [])",
 			"    {",
+            "        \\$params = new ModelParams(\\$params, static::class);",
+            "",
 			"        \\$query = Query::selectFrom([$2 => $3]);",
             "",
             "        // DO NOT REMOVE, checks if passed params are not used in code block.",
-            "        static::crashUnusedParams(\\$params);",
+            "        \\$params->check();",
 			"        return \\$query;",
 			"    }",
 			"",
@@ -98,7 +99,7 @@
         "scope": "php",
         "prefix": "model param",
         "body": [
-            "if (array_key_exists($1, \\$params)) {",
+            "if (isset(\\$params[$1])) {",
             "    $2",
             "}"
         ]
