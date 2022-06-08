@@ -7,6 +7,7 @@
 			"",
 			"namespace App\\Models;",
 			"",
+            "use App\\Utils\\ModelParams;",
 			"use Francerz\\SqlBuilder\\DatabaseManager;",
 			"use Francerz\\SqlBuilder\\Query;",
 			"",
@@ -130,7 +131,6 @@
         "body": [
             "public function $1(IServerRequest \\$request, IResponse \\$response, array \\$params): IResponse",
             "{",
-            "    $2",
             "    return \\$response;",
             "}",
         ]
@@ -193,6 +193,28 @@
             "<?php",
             "HTML::endSection();",
             "HTML::render();"
+        ]
+    },
+    "View layout": {
+        "scope": "php",
+        "prefix": "view layout",
+        "body": [
+            "",
+            "use Francerz\\Render\\HTML;",
+            "",
+            "?>",
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "    <meta charset=\"UTF-8\">",
+            "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "    <title>$1</title>",
+            "</head>",
+            "<body>",
+            "<?=HTML::section('content')?>",
+            "</body>",
+            "</html>",
         ]
     }
 }
