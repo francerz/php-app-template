@@ -11,7 +11,7 @@
     },
     "require": {
         "francerz/http": "^0.3",
-        "francerz/mysql-builder": "v0.4",
+        "francerz/mysql-builder": "^v0.5",
         "slim/slim": "^4.9",
         "slim/psr7": "^1.5",
         "vlucas/phpdotenv": "^5.3",
