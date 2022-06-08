@@ -19,14 +19,29 @@ abstract class AbstractController
         $this->renderer->setViewsPath(dirname(__FILE__, 3) . '/res/views');
     }
 
+    /**
+     * Returns a ResponseInterface with given content string and Content-Type.
+     *
+     * @param string $text
+     * @param IResponse|null $response
+     * @return IResponse
+     */
+    protected function render(string $text, string $contentType = 'text/plain', ?IResponse $response = null)
+    {
+        $response = $response ?? new Response();
+        $response = $response->withHeader('Content-Type', $contentType);
+        $response->getBody()->write($text);
+        return $response;
+    }
+
+    protected function renderJson($data)
+    {
+        return $this->render(json_encode($data), 'application/json');
+    }
+
     protected function renderHTML(string $view, array $data = [])
     {
         return $this->renderer->render($view, $data);
-    }
-
-    protected function renderJson(array $data)
-    {
-        return $this->renderer->renderJson($data);
     }
 
     protected function renderEmail(string $view, array $data = [])
@@ -34,15 +49,9 @@ abstract class AbstractController
         return $this->renderer->render($view, $data);
     }
 
-    protected function renderPlainText(string $text, ?IResponse $response = null)
-    {
-        $response = $response ?? new Response();
-        $response->getBody()->write($text);
-        $response->withHeader('Content-Type', 'text/plain');
-        return $response;
-    }
-
     /**
+     * Returns a ResponseInterface with redirection headers.
+     *
      * @param UriInterface|string $location
      * @param int $status
      * @param IResponse|null $response
