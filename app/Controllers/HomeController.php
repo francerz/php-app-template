@@ -9,6 +9,6 @@ class HomeController extends AbstractController
 {
     public function indexGet(IServerRequest $request, IResponse $response, array $params): IResponse
     {
-        return $this->renderPlainText('App setup success');
+        return $this->renderHTML('home/indexGet');
     }
 }
