@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Utils;
 
 use ArrayAccess;
 use LogicException;
@@ -35,7 +35,7 @@ class ModelParams implements ArrayAccess
         return $this->params[$offset] ?? null;
     }
 
-    public function offsetUnset($offset): void
+    public function offsetUnset($offset)
     {
         unset($params[$offset]);
     }
@@ -50,6 +50,11 @@ class ModelParams implements ArrayAccess
         return is_array($value) ? $value : [];
     }
 
+    /**
+     * List all unused parameter keys.
+     *
+     * @return string[]
+     */
     public function getUngetParams()
     {
         $usedKeys = array_keys($this->offsetGet ?? []);
@@ -57,6 +62,12 @@ class ModelParams implements ArrayAccess
         return array_diff($paramsKeys, $usedKeys);
     }
 
+    /**
+     * Checks used params and throws and exception if some of received params
+     * weren't used at any time.
+     *
+     * @throws LogicException
+     */
     public function check()
     {
         $ungetParams = $this->getUngetParams();

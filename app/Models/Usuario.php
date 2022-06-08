@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Utils\ModelParams;
 use Francerz\SqlBuilder\DatabaseManager;
 use Francerz\SqlBuilder\Query;
 
@@ -75,5 +76,7 @@ class Usuario extends AbstractModel
     {
         $db = DatabaseManager::connect('myapp');
         $query = Query::deleteFrom('usuarios', $usuario);
+        $result = $db->executeDelete($query);
+        return $result;
     }
 }
