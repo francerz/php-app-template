@@ -9,8 +9,8 @@
 /vendor/
 
 # Ignoring everything in /public, but index.php and assets
-/public/**/*
-!/public/assets/**/*
+/public/*
+!/public/assets
 !/public/index.php
 
 # Ignoring any cache file
