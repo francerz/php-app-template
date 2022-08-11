@@ -31,6 +31,11 @@ class ModelParams implements ArrayAccess
 
     public function offsetGet($offset)
     {
+        if (!isset($this->offsetExists[$offset])) {
+            throw new LogicException(
+                "Trying to get param '{$offset}' without previous check using `isset(\$params['$offset'])`."
+            );
+        }
         $this->offsetGet[$offset] = true;
         return $this->params[$offset] ?? null;
     }
@@ -55,7 +60,7 @@ class ModelParams implements ArrayAccess
      *
      * @return string[]
      */
-    public function getUngetParams()
+    private function getUngetParams()
     {
         $usedKeys = array_keys($this->offsetGet ?? []);
         $paramsKeys = array_keys($this->params);
