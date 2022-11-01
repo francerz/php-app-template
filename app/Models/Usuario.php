@@ -2,20 +2,24 @@
 
 namespace App\Models;
 
-use App\Utils\ModelParams;
 use Francerz\SqlBuilder\DatabaseManager;
 use Francerz\SqlBuilder\Query;
+use Francerz\WebappModelUtils\ModelParams;
 
+/**
+ *  Class.........: Usuario
+ *  Database alias: default
+ *  Table.........: usuarios
+ *  Table alias...: u
+ *  Primary key...: id_usuario
+ */
 class Usuario extends AbstractModel
 {
-    /** @var int */
     public $id_usuario;
-    /** @var string */
-    public $usuario;
 
     public static function getQuery(array $params = [])
     {
-        $params = new ModelParams($params, static::class);
+        $params = new ModelParams($params);
 
         $query = Query::selectFrom(['u' => 'usuarios']);
 
@@ -24,20 +28,19 @@ class Usuario extends AbstractModel
         }
 
         // DO NOT REMOVE, checks if passed params are not used in code block.
-        $params->check();
+        $params->checkUsed();
         return $query;
     }
 
     /**
-     * @param array $params
-     * @return Usuario[]
+     *  @return self[]
      */
     public static function getRows(array $params = [])
     {
-        $db = DatabaseManager::connect();
+        $db = DatabaseManager::connect('default');
         $query = static::getQuery($params);
-        $rows = $db->executeSelect($query);
-        return $rows->toArray(static::class);
+        $result = $db->executeSelect($query);
+        return $result->toArray(self::class);
     }
 
     public static function getFirst(array $params = [])
@@ -52,31 +55,20 @@ class Usuario extends AbstractModel
         return end($rows) ?: null;
     }
 
-    public static function insert(Usuario $usuario)
+    public static function insert(Usuario $data, $columns = null)
     {
-        $db = DatabaseManager::connect('myapp');
-        $query = Query::insertInto('usuarios', $usuario);
+        $db = DatabaseManager::connect('default');
+        $query = Query::insertInto('usuarios', $data, $columns);
         $result = $db->executeInsert($query);
-        $usuario->id_usuario = $result->getFirstId();
+        $data->id_usuario = $result->getInsertedId();
         return $result;
     }
 
-    public static function update(Usuario $usuario, $matching = null, $columns = null)
+    public static function update(Usuario $data, $matching = null, $columns = null)
     {
-        $matching = $matching ?? ['id_usuario'];
-        $columns = $columns ?? [];
-
-        $db = DatabaseManager::connect('myapp');
-        $query = Query::update('usuarios', $usuario, $matching, $columns);
+        $db = DatabaseManager::connect('default');
+        $query = Query::update('usuarios', $data, $matching, $columns);
         $result = $db->executeUpdate($query);
-        return $result;
-    }
-
-    public static function delete(Usuario $usuario)
-    {
-        $db = DatabaseManager::connect('myapp');
-        $query = Query::deleteFrom('usuarios', $usuario);
-        $result = $db->executeDelete($query);
         return $result;
     }
 }
