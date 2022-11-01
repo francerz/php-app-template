@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17a8d71d1ddbe22860e632a464800626",
+    "content-hash": "e9de03dcf8f5043adc3d0de9432b3fd3",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -130,57 +130,17 @@
             "time": "2021-10-18T14:08:19+00:00"
         },
         {
-            "name": "francerz/filesystem-utils",
-            "version": "v0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/francerz/php-filesystem-utils.git",
-                "reference": "8805d8eeaaa41e8af9d3837e436b8f077f9bfb1b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/francerz/php-filesystem-utils/zipball/8805d8eeaaa41e8af9d3837e436b8f077f9bfb1b",
-                "reference": "8805d8eeaaa41e8af9d3837e436b8f077f9bfb1b",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Francerz\\FileSystem\\Utils\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Francerz",
-                    "email": "francerzam@hotmail.com"
-                }
-            ],
-            "description": "File system tools for php",
-            "support": {
-                "issues": "https://github.com/francerz/php-filesystem-utils/issues",
-                "source": "https://github.com/francerz/php-filesystem-utils/tree/v0.1.0"
-            },
-            "time": "2021-06-02T17:23:08+00:00"
-        },
-        {
             "name": "francerz/http",
-            "version": "v0.3.13",
+            "version": "v0.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/francerz/php-http.git",
-                "reference": "6e57b00ee87322dc58d9d98f7a4e66dbfa6c6b40"
+                "reference": "7910d93f93a1a64cd5a9e7628949b065ab50c84c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/francerz/php-http/zipball/6e57b00ee87322dc58d9d98f7a4e66dbfa6c6b40",
-                "reference": "6e57b00ee87322dc58d9d98f7a4e66dbfa6c6b40",
+                "url": "https://api.github.com/repos/francerz/php-http/zipball/7910d93f93a1a64cd5a9e7628949b065ab50c84c",
+                "reference": "7910d93f93a1a64cd5a9e7628949b065ab50c84c",
                 "shasum": ""
             },
             "require": {
@@ -204,22 +164,22 @@
             "description": "Basic HTTP client",
             "support": {
                 "issues": "https://github.com/francerz/php-http/issues",
-                "source": "https://github.com/francerz/php-http/tree/v0.3.13"
+                "source": "https://github.com/francerz/php-http/tree/v0.3.14"
             },
-            "time": "2022-02-17T15:59:06+00:00"
+            "time": "2022-10-10T17:19:51+00:00"
         },
         {
             "name": "francerz/http-utils",
-            "version": "v0.2.47",
+            "version": "v0.2.48",
             "source": {
                 "type": "git",
                 "url": "https://github.com/francerz/php-http-utils.git",
-                "reference": "e9af055bf2d6ada791ec620565322b56b85df505"
+                "reference": "5461eb84550ddae19b2f646480813357170baa34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/francerz/php-http-utils/zipball/e9af055bf2d6ada791ec620565322b56b85df505",
-                "reference": "e9af055bf2d6ada791ec620565322b56b85df505",
+                "url": "https://api.github.com/repos/francerz/php-http-utils/zipball/5461eb84550ddae19b2f646480813357170baa34",
+                "reference": "5461eb84550ddae19b2f646480813357170baa34",
                 "shasum": ""
             },
             "require": {
@@ -262,9 +222,9 @@
             ],
             "support": {
                 "issues": "https://github.com/francerz/php-http-utils/issues",
-                "source": "https://github.com/francerz/php-http-utils/tree/v0.2.47"
+                "source": "https://github.com/francerz/php-http-utils/tree/v0.2.48"
             },
-            "time": "2022-05-08T18:55:26+00:00"
+            "time": "2022-07-22T18:51:35+00:00"
         },
         {
             "name": "francerz/mysql-builder",
@@ -317,16 +277,16 @@
         },
         {
             "name": "francerz/php-power-data",
-            "version": "v0.1.25",
+            "version": "v0.1.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/francerz/php-power-data.git",
-                "reference": "2f57c45f4141ab1fe2f3cd4bf648bf4a9e602787"
+                "reference": "3b754b775947cef8f69831992fbe8837b1027c68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/francerz/php-power-data/zipball/2f57c45f4141ab1fe2f3cd4bf648bf4a9e602787",
-                "reference": "2f57c45f4141ab1fe2f3cd4bf648bf4a9e602787",
+                "url": "https://api.github.com/repos/francerz/php-power-data/zipball/3b754b775947cef8f69831992fbe8837b1027c68",
+                "reference": "3b754b775947cef8f69831992fbe8837b1027c68",
                 "shasum": ""
             },
             "require-dev": {
@@ -347,64 +307,22 @@
             "description": "PHP data structures for complex data handling",
             "support": {
                 "issues": "https://github.com/francerz/php-power-data/issues",
-                "source": "https://github.com/francerz/php-power-data/tree/v0.1.25"
+                "source": "https://github.com/francerz/php-power-data/tree/v0.1.28"
             },
-            "time": "2021-10-13T14:00:45+00:00"
-        },
-        {
-            "name": "francerz/render",
-            "version": "v0.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/francerz/php-render.git",
-                "reference": "739c13aac6e5716aea4be3d2d8fe2864dc1e9786"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/francerz/php-render/zipball/739c13aac6e5716aea4be3d2d8fe2864dc1e9786",
-                "reference": "739c13aac6e5716aea4be3d2d8fe2864dc1e9786",
-                "shasum": ""
-            },
-            "require": {
-                "francerz/filesystem-utils": "^0.1.0",
-                "francerz/php-power-data": "^0.1.25",
-                "psr/http-factory": "^1.0"
-            },
-            "require-dev": {
-                "francerz/http": "^0.3.8",
-                "phpunit/phpunit": "8.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Francerz\\Render\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Francerz",
-                    "email": "francerzam@hotmail.com"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/francerz/php-render/issues",
-                "source": "https://github.com/francerz/php-render/tree/v0.1.4"
-            },
-            "time": "2022-02-22T16:29:40+00:00"
+            "time": "2022-08-04T18:17:01+00:00"
         },
         {
             "name": "francerz/sql-builder",
-            "version": "v0.5.0",
+            "version": "v0.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/francerz/php-sql-builder.git",
-                "reference": "502dd3d80ae3f57ca1be2f6970507c8bb83f1d2e"
+                "reference": "9c8bb33b60e0fe51d74e9b89fb6a2e4a202d1293"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/francerz/php-sql-builder/zipball/502dd3d80ae3f57ca1be2f6970507c8bb83f1d2e",
-                "reference": "502dd3d80ae3f57ca1be2f6970507c8bb83f1d2e",
+                "url": "https://api.github.com/repos/francerz/php-sql-builder/zipball/9c8bb33b60e0fe51d74e9b89fb6a2e4a202d1293",
+                "reference": "9c8bb33b60e0fe51d74e9b89fb6a2e4a202d1293",
                 "shasum": ""
             },
             "require": {
@@ -438,30 +356,104 @@
             "description": "SQL Builder",
             "support": {
                 "issues": "https://github.com/francerz/php-sql-builder/issues",
-                "source": "https://github.com/francerz/php-sql-builder/tree/v0.5.0"
+                "source": "https://github.com/francerz/php-sql-builder/tree/v0.5.9"
             },
-            "time": "2022-06-08T18:18:44+00:00"
+            "time": "2022-08-17T20:13:49+00:00"
         },
         {
-            "name": "graham-campbell/result-type",
-            "version": "v1.0.4",
+            "name": "francerz/webapp-model-utils",
+            "version": "v0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/GrahamCampbell/Result-Type.git",
-                "reference": "0690bde05318336c7221785f2a932467f98b64ca"
+                "url": "https://github.com/francerz/php-webapp-model-utils.git",
+                "reference": "073131ca6825ad80bfe0230a04f6f517f474593d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/0690bde05318336c7221785f2a932467f98b64ca",
-                "reference": "0690bde05318336c7221785f2a932467f98b64ca",
+                "url": "https://api.github.com/repos/francerz/php-webapp-model-utils/zipball/073131ca6825ad80bfe0230a04f6f517f474593d",
+                "reference": "073131ca6825ad80bfe0230a04f6f517f474593d",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Francerz\\WebappModelUtils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "Web App utils for models.",
+            "support": {
+                "issues": "https://github.com/francerz/php-webapp-model-utils/issues",
+                "source": "https://github.com/francerz/php-webapp-model-utils/tree/v0.1"
+            },
+            "time": "2022-10-05T14:30:56+00:00"
+        },
+        {
+            "name": "francerz/webapp-render-utils",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/francerz/php-webapp-render-utils.git",
+                "reference": "b73218360ce0ad7b432e28fd96cef8f51b23df97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/francerz/php-webapp-render-utils/zipball/b73218360ce0ad7b432e28fd96cef8f51b23df97",
+                "reference": "b73218360ce0ad7b432e28fd96cef8f51b23df97",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0 || ^8.0",
-                "phpoption/phpoption": "^1.8"
+                "fig/http-message-util": "^1.1",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
+                "francerz/http": "^0.3.13",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Francerz\\WebappRenderUtils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "Web App rendering utils.",
+            "support": {
+                "issues": "https://github.com/francerz/php-webapp-render-utils/issues",
+                "source": "https://github.com/francerz/php-webapp-render-utils/tree/v0.1.4"
+            },
+            "time": "2022-10-31T20:50:08+00:00"
+        },
+        {
+            "name": "graham-campbell/result-type",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Result-Type.git",
+                "reference": "a878d45c1914464426dc94da61c9e1d36ae262a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/a878d45c1914464426dc94da61c9e1d36ae262a8",
+                "reference": "a878d45c1914464426dc94da61c9e1d36ae262a8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5 || ^8.0",
+                "phpoption/phpoption": "^1.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5.28 || ^9.5.21"
             },
             "type": "library",
             "autoload": {
@@ -490,7 +482,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
-                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.0.4"
+                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.0"
             },
             "funding": [
                 {
@@ -502,7 +494,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-21T21:41:47+00:00"
+            "time": "2022-07-30T15:56:11+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -556,29 +548,33 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.8.1",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15"
+                "reference": "dc5ff11e274a90cc1c743f66c9ad700ce50db9ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
-                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/dc5ff11e274a90cc1c743f66c9ad700ce50db9ab",
+                "reference": "dc5ff11e274a90cc1c743f66c9ad700ce50db9ab",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0 || ^8.0"
+                "php": "^7.2.5 || ^8.0"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4.1",
-                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
+                "bamarni/composer-bin-plugin": "^1.8",
+                "phpunit/phpunit": "^8.5.28 || ^9.5.21"
             },
             "type": "library",
             "extra": {
+                "bamarni-bin": {
+                    "bin-links": true,
+                    "forward-command": true
+                },
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -611,7 +607,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.8.1"
+                "source": "https://github.com/schmittjoh/php-option/tree/1.9.0"
             },
             "funding": [
                 {
@@ -623,7 +619,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-04T23:24:31+00:00"
+            "time": "2022-07-30T15:51:26+00:00"
         },
         {
             "name": "psr/container",
@@ -1493,16 +1489,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v5.4.1",
+            "version": "v5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "264dce589e7ce37a7ba99cb901eed8249fbec92f"
+                "reference": "1a7ea2afc49c3ee6d87061f5a233e3a035d0eae7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/264dce589e7ce37a7ba99cb901eed8249fbec92f",
-                "reference": "264dce589e7ce37a7ba99cb901eed8249fbec92f",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/1a7ea2afc49c3ee6d87061f5a233e3a035d0eae7",
+                "reference": "1a7ea2afc49c3ee6d87061f5a233e3a035d0eae7",
                 "shasum": ""
             },
             "require": {
@@ -1517,15 +1513,19 @@
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-filter": "*",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.21 || ^9.5.10"
+                "phpunit/phpunit": "^7.5.20 || ^8.5.30 || ^9.5.25"
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator."
             },
             "type": "library",
             "extra": {
+                "bamarni-bin": {
+                    "bin-links": true,
+                    "forward-command": true
+                },
                 "branch-alias": {
-                    "dev-master": "5.4-dev"
+                    "dev-master": "5.5-dev"
                 }
             },
             "autoload": {
@@ -1557,7 +1557,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.4.1"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.5.0"
             },
             "funding": [
                 {
@@ -1569,7 +1569,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-12T23:22:04+00:00"
+            "time": "2022-10-16T01:01:54+00:00"
         }
     ],
     "packages-dev": [],
