@@ -191,29 +191,17 @@
         ]
     },
     "View" : {
-        "scope": "php",
         "prefix": "view",
         "body": [
-            "",
-            "use Francerz\\Render\\HTML;",
-            "",
-            "HTML::layout('@layouts/default');",
-            "HTML::startSection('content');",
-            "?>",
+            "<?=\\$layout = \\$view->loadLayout('@layouts/default')?>",
+            "<?=\\$layout->startSection('content')?>",
             "$1",
-            "<?php",
-            "HTML::endSection();",
-            "HTML::render();"
+            "<?=\\$layout->endSection()?>"
         ]
     },
     "View layout": {
-        "scope": "php",
         "prefix": "view layout",
         "body": [
-            "",
-            "use Francerz\\Render\\HTML;",
-            "",
-            "?>",
             "<!DOCTYPE html>",
             "<html lang=\"en\">",
             "<head>",
@@ -223,7 +211,7 @@
             "    <title>$1</title>",
             "</head>",
             "<body>",
-            "<?=HTML::section('content')?>",
+            "<?=\\$layout->section('content')?>",
             "</body>",
             "</html>",
         ]

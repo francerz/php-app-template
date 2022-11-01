@@ -2,23 +2,12 @@
 
 namespace App\Controllers;
 
+use App\Application;
 use Fig\Http\Message\StatusCodeInterface as IStatusCode;
-use Francerz\Http\HttpFactory;
-use Francerz\Render\Renderer;
 use Psr\Http\Message\ResponseInterface as IResponse;
-use Slim\Psr7\Response;
 
 abstract class AbstractController
 {
-    private $renderer;
-
-    public function __construct()
-    {
-        $httpFactory = new HttpFactory();
-        $this->renderer = new Renderer($httpFactory, $httpFactory);
-        $this->renderer->setViewsPath(dirname(__FILE__, 3) . '/res/views');
-    }
-
     /**
      * Returns a ResponseInterface with given content string and Content-Type.
      *
@@ -28,25 +17,30 @@ abstract class AbstractController
      */
     protected function render(string $text, string $contentType = 'text/plain', ?IResponse $response = null)
     {
-        $response = $response ?? new Response();
-        $response = $response->withHeader('Content-Type', $contentType);
-        $response->getBody()->write($text);
-        return $response;
+        $renderer = Application::getRenderer();
+        return $renderer->render($text, $contentType, $response);
     }
 
-    protected function renderJson($data)
+    protected function renderJson($data, IResponse $response = null)
     {
-        return $this->render(json_encode($data), 'application/json');
+        $renderer = Application::getRenderer();
+        return $renderer->renderJson($data, $response);
     }
 
-    protected function renderHTML(string $view, array $data = [])
-    {
-        return $this->renderer->render($view, $data);
+    protected function renderFile(
+        string $filepath,
+        ?string $filename,
+        bool $attachment = false,
+        ?IResponse $response = null
+    ) {
+        $renderer = Application::getRenderer();
+        return $renderer->renderFile($filepath, $filename, $attachment, $response);
     }
 
-    protected function renderEmail(string $view, array $data = [])
+    protected function renderView(string $view, array $data = [], ?IResponse $response = null)
     {
-        return $this->renderer->render($view, $data);
+        $renderer = Application::getRenderer();
+        return $renderer->renderView($view, $data, $response);
     }
 
     /**
@@ -59,9 +53,7 @@ abstract class AbstractController
      */
     protected function redirect($location, $status = IStatusCode::STATUS_FOUND, ?IResponse $response = null)
     {
-        $response = $response ?? new Response();
-        return $response
-            ->withStatus($status)
-            ->withHeader('Location', (string)$location);
+        $renderer = Application::getRenderer();
+        return $renderer->renderRedirect($location, $status, $response);
     }
 }
