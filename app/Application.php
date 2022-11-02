@@ -8,6 +8,7 @@ use App\Middlewares\MetricsMiddleware;
 use Francerz\Http\HttpFactory;
 use Francerz\Http\Utils\UriHelper;
 use Francerz\WebappRenderUtils\Renderer;
+use Psr\Http\Message\ServerRequestInterface;
 use Slim\Factory\AppFactory;
 use Slim\App as SlimApp;
 
@@ -27,7 +28,7 @@ class Application
         return $renderer;
     }
 
-    public function start()
+    public function __construct()
     {
         $siteUrl = UriHelper::getSiteUrl();
         $httpManager = HttpFactory::getManager();
@@ -37,7 +38,16 @@ class Application
         $this->slimApp = $slimApp = AppFactory::create();
         $slimApp->setBasePath($sitePath);
         $this->route();
-        $slimApp->run();
+    }
+
+    public function run(?ServerRequestInterface $request = null)
+    {
+        $this->slimApp->run($request);
+    }
+
+    public function handle(?ServerRequestInterface $request = null)
+    {
+        return $this->slimApp->handle($request);
     }
 
     public function route()

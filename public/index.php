@@ -34,5 +34,5 @@ use Francerz\Http\Utils\HttpHelper;
 (function () {
     HttpHelper::redirectToScript();
     $app = new Application();
-    $app->start();
+    $app->run();
 })();
