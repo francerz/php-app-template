@@ -3,10 +3,10 @@
 namespace App;
 
 use App\Controllers\HomeController;
-use App\Middlewares\DebugMiddleware;
 use App\Middlewares\MetricsMiddleware;
 use Francerz\Http\HttpFactory;
 use Francerz\Http\Utils\UriHelper;
+use Francerz\WebappCommons\Middlewares\DebugMiddleware;
 use Francerz\WebappRenderUtils\Renderer;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Factory\AppFactory;

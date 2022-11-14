@@ -13,6 +13,7 @@
         "francerz/console": "^0.1",
         "francerz/http": "^0.3",
         "francerz/mysql-builder": "^v0.5",
+        "francerz/webapp-commons": "^0.1.0",
         "francerz/webapp-model-utils": "^0.1",
         "francerz/webapp-render-utils": "^0.1",
         "slim/slim": "^4.9",
