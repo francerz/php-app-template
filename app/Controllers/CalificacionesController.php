@@ -6,10 +6,10 @@ use App\Application;
 use Psr\Http\Message\ResponseInterface as IResponse;
 use Psr\Http\Message\ServerRequestInterface as IServerRequest;
 
-class HomeController extends AbstractController
+class CalificacionesController extends AbstractController
 {
     public function indexGet(IServerRequest $request, IResponse $response, array $params): IResponse
     {
-        return Application::getRenderer()->renderView('/home/indexGet');
+        return Application::getRenderer()->renderView('calificaciones/indexGet', []);
     }
 }

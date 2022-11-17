@@ -107,6 +107,19 @@
             "}",
         ]
     },
+    "Model Upsert": {
+        "scope": "php",
+        "prefix": "model upsert",
+        "body": [
+            "public static function upsert($TM_FILENAME_BASE \\$data, \\$keys = [], \\$columns = [])",
+            "{",
+            "    \\$db = DatabaseManager::connect($1);",
+            "    \\$query = Query::upsert($2, \\$data, \\$keys, \\$columns);",
+            "    \\$result = \\$db->executeUpdate(\\$query);",
+            "    return \\$result;",
+            "}",
+        ]
+    },
     "Model Query Parameter": {
         "scope": "php",
         "prefix": "model param",
@@ -123,6 +136,7 @@
             "",
             "namespace App\\Controllers;",
             "",
+            "use App\\Application;",
             "use Psr\\Http\\Message\\ResponseInterface as IResponse;",
             "use Psr\\Http\\Message\\ServerRequestInterface as IServerRequest;",
             "",
@@ -136,14 +150,52 @@
             ""
         ]
     },
-    "Controller Method":{
+    "Controller Get":{
         "scope": "php",
-        "prefix": "controller method",
+        "prefix": "controller method get",
         "body": [
             "public function $1(IServerRequest \\$request, IResponse \\$response, array \\$params): IResponse",
             "{",
-            "    return \\$response;",
+            "    return Application::getRenderer()->render$2($3);",
             "}",
+        ]
+    },
+    "Controller Post":{
+        "scope": "php",
+        "prefix": "controller method post",
+        "body": [
+            "public function $1(IServerRequest \\$request, IResponse \\$response, array \\$params): IResponse",
+            "{",
+            "    return Application::getRenderer()->renderRedirect($2);",
+            "}",
+        ]
+    },
+    "Render View":{
+        "scope": "php",
+        "prefix": "render view",
+        "body": [
+            "return Application::getRenderer()->renderView('$1', [$2]);"
+        ]
+    },
+    "Render Redirect":{
+        "scope": "php",
+        "prefix": "render redirect",
+        "body": [
+            "return Application::getRenderer()->renderRedirect($1);"
+        ]
+    },
+    "Render File":{
+        "scope": "php",
+        "prefix": "render file",
+        "body": [
+            "return Application::getRenderer()->renderFile($1);"
+        ]
+    },
+    "Render Json":{
+        "scope": "php",
+        "prefix": "render json",
+        "body": [
+            "return Application::getRenderer()->renderJson($1);"
         ]
     },
     "Middleware": {
@@ -192,6 +244,7 @@
     },
     "View" : {
         "prefix": "view",
+        "isFileTemplate": true,
         "body": [
             "<?=\\$layout = \\$view->loadLayout('@layouts/default')?>",
             "<?=\\$layout->startSection('content')?>",
@@ -201,6 +254,7 @@
     },
     "View layout": {
         "prefix": "view layout",
+        "isFileTemplate": true,
         "body": [
             "<!DOCTYPE html>",
             "<html lang=\"en\">",
