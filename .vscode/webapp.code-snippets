@@ -115,7 +115,7 @@
             "{",
             "    \\$db = DatabaseManager::connect($1);",
             "    \\$query = Query::upsert($2, \\$data, \\$keys, \\$columns);",
-            "    \\$result = \\$db->executeUpdate(\\$query);",
+            "    \\$result = \\$db->executeUpsert(\\$query);",
             "    return \\$result;",
             "}",
         ]
@@ -132,6 +132,7 @@
     "Controller": {
         "scope": "php",
         "prefix": "controller",
+        "isFileTemplate": true,
         "body": [
             "",
             "namespace App\\Controllers;",
@@ -201,6 +202,7 @@
     "Middleware": {
         "scope": "php",
         "prefix": "middleware",
+        "isFileTemplate": true,
         "body": [
             "",
             "namespace App\\Middlewares;",
@@ -240,6 +242,30 @@
         "prefix": "route post",
         "body": [
             "\\$route->post($1, [$2, $3]);"
+        ]
+    },
+    "Session var": {
+        "scope": "php",
+        "prefix": "session var",
+        "body": [
+            "/** @var $type */",
+            "private static \\$$varName;",
+            "public static function set$UpperVarName($type \\$$varName)",
+            "{",
+            "    static::\\$$varName = \\$_SESSION['$varName'] = \\$$varName;",
+            "}",
+            "public static function get$UpperVarName(): ?$type",
+            "{",
+            "    if (!isset(static::\\$$varName)) {",
+            "        static::\\$$varName = \\$_SESSION['$varName'] ?? null;",
+            "    }",
+            "    return static::\\$$varName;",
+            "}",
+            "public static function unset$UpperVarName()",
+            "{",
+            "    static::\\$$varName = null;",
+            "    unset(\\$_SESSION['$varName']);",
+            "}"
         ]
     },
     "View" : {
