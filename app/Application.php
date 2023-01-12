@@ -54,7 +54,7 @@ class Application
     {
         $route = $this->slimApp;
         $route->addMiddleware(new MetricsMiddleware());
-        $route->addMiddleware(new DebugMiddleware());
+        $route->addMiddleware(new DebugMiddleware(Application::getRenderer()->getResponseFactory()));
         $route->get('[/]', [HomeController::class, 'indexGet']);
     }
 }
